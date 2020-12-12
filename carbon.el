@@ -16,7 +16,7 @@
 
 (defun carbon--prepare-url (code)
   "Given a CODE builds a url to be opened in browser."
-  (url-encode-url (concat (format "%s?l=%s&code=%s" carbon--url (downcase mode-name) code))))
+  (url-encode-url (concat (format "%s?l=%s&code=%s" carbon--url (downcase mode-name) (url-hexify-string code)))))
 
 (defun carbon--send-code (code)
   "Send CODE to api."
